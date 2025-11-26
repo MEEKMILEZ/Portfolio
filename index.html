@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paschal Nnenna - Cloud Computing & UI/UX Professional Portfolio</title>
+    <script>
+        // Remove no-js class as soon as possible to enable animations
+        document.documentElement.classList.remove('no-js');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2D3561;
+            --secondary: #5B7DB1;
+            --accent: #7C98B3;
+            --light: #F8F9FA;
+            --dark: #1a1a2e;
+            --text: #333333;
+            --gradient: linear-gradient(135deg, #2D3561 0%, #5B7DB1 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation setup */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Elements that will animate on scroll */
+        .animate-on-scroll {
+            opacity: 0;
+        }
+
+        .animate-on-scroll.animated {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Fallback for users with JS disabled or prefer reduced motion */
+        .no-js .animate-on-scroll,
+        @media (prefers-reduced-motion: reduce) {
+            .animate-on-scroll {
+                opacity: 1;
+                animation: none;
+            }
+        }
+
+        /* Header/Hero Section */
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0 50 L50 0 L100 50 L50 100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        /* Navigation - Table of Contents */
+        nav {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-title {
+            text-align: center;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background: var(--secondary);
+            color: white;
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        nav a:focus {
+            outline-color: white;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* 1. PROFILE SECTION */
+        .profile-section {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .profile-header {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5em;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-info h3 {
+            color: var(--primary);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .profile-title {
+            color: var(--secondary);
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .profile-bio {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .profile-highlights {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .profile-highlights h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .profile-highlights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .profile-highlights li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .profile-highlights li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* 2. SKILLS/RESUME SECTION */
+        .resume-section {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .resume-header h3 {
+            color: var(--primary);
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .resume-contact {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        .resume-section-title {
+            color: var(--primary);
+            font-size: 1.5em;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .skill-category h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .experience-item::before, .education-item::before {
+            content: '▼';
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: var(--secondary);
+            font-size: 1.5em;
+            transition: transform 0.3s;
+            pointer-events: none;
+        }
+
+        /* Collapsed state */
+        .experience-item .experience-details,
+        .education-item .edu-details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.4s ease;
+        }
+
+        /* Expanded state */
+        .experience-item.expanded,
+        .education-item.expanded {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .experience-item.expanded::before,
+        .education-item.expanded::before {
+            transform: rotate(180deg);
+        }
+
+        .experience-item.expanded .experience-details,
+        .education-item.expanded .edu-details {
+            max-height: 800px;
+            opacity: 1;
+            margin-top: 15px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            color: var(--primary);
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .experience-date {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        .experience-company {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .experience-description {
+            line-height: 1.7;
+        }
+
+        /* 3. WORK SAMPLES SECTION */
+        .projects-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Collapsed state - minimal info shown */
+        .project-card .project-description,
+        .project-card .tech-stack,
+        .project-card .project-links {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.3s ease;
+        }
+
+        /* Expanded state - activated by JavaScript */
+        .project-card.expanded {
+            box-shadow: 0 10px 30px rgba(45, 53, 97, 0.2);
+        }
+
+        .project-card.expanded .project-description {
+            max-height: 300px;
+            opacity: 1;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+        .project-card.expanded .tech-stack {
+            max-height: 200px;
+            opacity: 1;
+            margin-top: 15px;
+        }
+
+        .project-card.expanded .project-links {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 15px;
+        }
+
+        /* Tap indicator */
+        .project-card::after {
+            content: '👆 Tap to expand';
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .project-card.expanded::after {
+            content: '👆 Tap to collapse';
+            background: var(--secondary);
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 768px) {
+            .project-card::after {
+                font-size: 0.75em;
+                padding: 6px 12px;
+            }
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+        }
+
+        .cloud-icon::before {
+            content: '☁️';
+        }
+
+        .design-icon::before {
+            content: '🎨';
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .project-type {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .project-content p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .project-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--primary);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: #f0f0f0;
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.85em;
+        }
+
+        /* 4. EDUCATION & ACKNOWLEDGEMENTS SECTION */
+        .education-section {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .edu-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .edu-card::before {
+            content: '▼';
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: var(--secondary);
+            font-size: 1.5em;
+            transition: transform 0.3s;
+            pointer-events: none;
+        }
+
+        /* Collapsed state */
+        .edu-card .edu-extra-details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.4s ease;
+        }
+
+        /* Expanded state */
+        .edu-card.expanded {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left-width: 6px;
+        }
+
+        .edu-card.expanded::before {
+            transform: rotate(180deg);
+        }
+
+        .edu-card.expanded .edu-extra-details {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 15px;
+        }
+
+        .edu-card h4 {
+            color: var(--primary);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .edu-institution {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .edu-date {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .edu-details {
+            margin-top: 10px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .certifications-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .cert-item {
+            background: var(--light);
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cert-icon {
+            font-size: 1.5em;
+        }
+
+        .cert-info {
+            flex: 1;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .cert-status {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .profile-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin: 0 auto;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="animate-on-scroll">
+        <div class="hero-content">
+            <h1>Paschal Nnenna</h1>
+            <p class="tagline">Digital Portfolio - Cloud Computing & UI/UX Design</p>
+        </div>
+    </header>
+
+    <!-- Navigation Menu / Table of Contents -->
+    <nav class="animate-on-scroll">
+        <div class="nav-title">Table of Contents</div>
+        <ul>
+            <li><a href="#profile">1. Profile</a></li>
+            <li><a href="#skills">2. Skills & Resume</a></li>
+            <li><a href="#work-samples">3. Work Samples</a></li>
+            <li><a href="#education">4. Education & Acknowledgements</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- 1. PROFILE SECTION -->
+        <section id="profile" class="animate-on-scroll">
+            <h2>1. Profile</h2>
+            <div class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-image">PN</div>
+                    <div class="profile-info">
+                        <h3>Paschal Nnenna</h3>
+                        <p class="profile-title">Cloud Computing Specialist | UI/UX Designer</p>
+                        <p class="profile-bio">
+                            Enthusiastic and adaptable cloud computing professional with a strong foundation in UI/UX design and content management. Currently pursuing a postgraduate certificate in Cloud Computing Technology at George Brown College, I bring a unique perspective that combines technical cloud infrastructure expertise with user-centered design thinking.
+                        </p>
+                        <p class="profile-bio">
+                            My background spans UI/UX design at FLOWCODE TECH HUB where I enhanced usability for 10+ client projects and achieved a 25% improvement in user satisfaction, and content management at the Nigerian National Committee of the United World College where I grew online engagement by 40%. This experience enables me to build cloud solutions that are not only technically robust but also intuitive and user-friendly, making me an ideal candidate for companies like Compugen, Microsoft, and Intel.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="profile-highlights">
+                    <h4>Professional Highlights</h4>
+                    <ul>
+                        <li>Developing expertise in cloud platforms (Microsoft Azure, AWS), DevOps practices, and CI/CD pipelines</li>
+                        <li>Proven track record in UI/UX design with 25% improvement in user satisfaction scores across projects</li>
+                        <li>Strong communication and teamwork skills, demonstrated through successful client collaboration and cross-functional project delivery</li>
+                        <li>Experience with Docker, Kubernetes, Git/GitHub, Jenkins, and modern cloud automation tools</li>
+                        <li>Proven ability to streamline workflows and improve efficiency, reducing production time by 20% in previous roles</li>
+                        <li>Seeking Cloud/DevOps internship opportunities to leverage technical and design skills in innovative technology projects</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SKILLS & RESUME SECTION -->
+        <section id="skills" class="animate-on-scroll">
+            <h2>2. Skills & Resume</h2>
+            <div class="resume-section">
+                <div class="resume-header">
+                    <h3>PASCHAL NNENNA</h3>
+                    <p class="resume-contact">
+                        Toronto, ON, Canada<br>
+                        Email: <a href="/cdn-cgi/l/email-protection#1d73737873737c6d7c6e7e757c715d647c757272337e7270"><span class="__cf_email__" data-cfemail="76181813181817061705151e171a360f171e19195815191b">[email&#160;protected]</span></a><br>
+                        Phone: 437-335-3893<br>
+                        LinkedIn: linkedin.com/in/paschal-nnenna
+                    </p>
+                </div>
+
+                <h3 class="resume-section-title">Professional Summary</h3>
+                <p style="line-height: 1.8; margin-bottom: 20px;">
+                    Enthusiastic and adaptable learner with experience in UI/UX design and content management, currently pursuing a postgraduate certificate in Cloud Computing at George Brown College. Seeking a Cloud/DevOps internship to strengthen technical expertise and contribute to collaborative technology projects. Skilled in creating user-centered designs that improve product usability and overall customer experience, with a strong foundation in digital communication and project coordination.
+                </p>
+
+                <h3 class="resume-section-title">Technical Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Cloud Platforms & Services</h4>
+                        <ul class="skill-list">
+                            <li>Microsoft Azure</li>
+                            <li>Amazon Web Services (AWS)</li>
+                            <li>Cloud architecture & deployment</li>
+                            <li>Cloud security & monitoring</li>
+                            <li>Cloud automation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>DevOps & Infrastructure</h4>
+                        <ul class="skill-list">
+                            <li>Docker (containerization)</li>
+                            <li>Kubernetes (orchestration)</li>
+                            <li>CI/CD pipelines</li>
+                            <li>GitHub Actions</li>
+                            <li>Jenkins</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Version Control & OS</h4>
+                        <ul class="skill-list">
+                            <li>Git & GitHub</li>
+                            <li>Linux (Ubuntu)</li>
+                            <li>Windows</li>
+                            <li>Command line/Terminal</li>
+                            <li>Shell scripting</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>UI/UX Design Tools</h4>
+                        <ul class="skill-list">
+                            <li>Figma</li>
+                            <li>Adobe XD</li>
+                            <li>Wireframing & Prototyping</li>
+                            <li>User Research & Testing</li>
+                            <li>Design Systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="resume-section-title">Professional Experience</h3>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">UI/UX Designer</div>
+                        <div class="experience-date">2023 - 2024</div>
+                    </div>
+                    <div class="experience-company">FLOWCODE TECH HUB, Nigeria</div>
+                    <div class="experience-details">
+                        <ul style="margin-top: 10px; line-height: 1.7;">
+                            <li>Designed and optimized user interfaces for 10+ client projects, enhancing usability and accessibility</li>
+                            <li>Conducted user research and testing, resulting in a 25% improvement in user satisfaction scores</li>
+                            <li>Collaborated with cross-functional teams to translate requirements into intuitive design solutions</li>
+                            <li>Applied wireframing and prototyping tools (Figma) to accelerate project delivery timelines by 15%</li>
+                            <li>Strengthened understanding of customer needs and digital product lifecycle - transferable to cloud-based solutions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-title">Content Manager</div>
+                        <div class="experience-date">2021 - 2023</div>
+                    </div>
+                    <div class="experience-company">Nigerian National Committee of the United World College (NNC-UWC)</div>
+                    <div class="experience-details">
+                        <ul style="margin-top: 10px; line-height: 1.7;">
+                            <li>Managed and published content across multiple digital platforms, growing online engagement by 40%</li>
+                            <li>Coordinated communication strategies that improved outreach to prospective applicants by 30%</li>
+                            <li>Streamlined content workflows, reducing production time by 20% through structured planning and scheduling</li>
+                            <li>Ensured brand consistency and accuracy, while enhancing clarity in organizational messaging</li>
+                            <li>Developed transferable project coordination and stakeholder management skills applicable to DevOps teamwork</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- 3. WORK SAMPLES SECTION -->
+        <section id="work-samples" class="animate-on-scroll">
+            <h2>3. Work Samples</h2>
+            <p class="projects-intro">
+                Below is a collection of projects showcasing my expertise in cloud computing and UI/UX design. 
+                These projects demonstrate my ability to architect scalable cloud solutions while maintaining 
+                a strong focus on user experience and design excellence. As I complete these projects during my 
+                studies at George Brown College, links to GitHub repositories and live demos will be added.
+            </p>
+
+            <h3 style="color: var(--primary); font-size: 1.8em; margin: 40px 0 25px 0;">Cloud Computing Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image cloud-icon"></div>
+                    <div class="project-content">
+                        <span class="project-type">Cloud Infrastructure</span>
+                        <h3>Multi-Cloud Migration Strategy Platform</h3>
+                        <p class="project-description">Comprehensive multi-cloud migration framework for enterprise applications, focusing on cost optimization and seamless workload distribution across AWS, Azure, and Google Cloud Platform. Implements automated resource provisioning and monitoring to ensure high availability and performance.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🔗 GitHub Repository (Coming Soon)</a>
+                            <a href="#" class="project-link">📄 Documentation</a>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Azure</span>
+                            <span class="tech-tag">GCP</span>
+                            <span class="tech-tag">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image cloud-icon"></div>
+                    <div class="project-content">
+                        <span class="project-type">DevOps & Automation</span>
+                        <h3>Serverless Microservices Architecture</h3>
+                        <p class="project-description">Scalable serverless application using AWS Lambda, API Gateway, and DynamoDB with automated deployment pipelines. Implements event-driven architecture patterns for high-performance enterprise applications with auto-scaling capabilities and cost efficiency.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🔗 GitHub Repository (Coming Soon)</a>
+                            <a href="#" class="project-link">🌐 Live Demo</a>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">AWS Lambda</span>
+                            <span class="tech-tag">API Gateway</span>
+                            <span class="tech-tag">DynamoDB</span>
+                            <span class="tech-tag">CloudFormation</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image cloud-icon"></div>
+                    <div class="project-content">
+                        <span class="project-type">Container Orchestration</span>
+                        <h3>Enterprise Kubernetes Infrastructure</h3>
+                        <p class="project-description">Production-grade Kubernetes cluster with advanced monitoring, auto-scaling, and disaster recovery capabilities. Implements security best practices and compliance standards for enterprise workloads with comprehensive logging, alerting, and health monitoring systems.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🔗 GitHub Repository (Coming Soon)</a>
+                            <a href="#" class="project-link">📊 Architecture Diagram</a>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Helm</span>
+                            <span class="tech-tag">Prometheus</span>
+                            <span class="tech-tag">Grafana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image cloud-icon"></div>
+                    <div class="project-content">
+                        <span class="project-type">Cloud Security</span>
+                        <h3>Zero Trust Security Framework</h3>
+                        <p>Comprehensive Zero Trust architecture for cloud infrastructure with identity-based access controls, network segmentation, and continuous monitoring. Focuses on compliance with industry standards and regulatory requirements including SOC 2 and GDPR, ensuring maximum security posture.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🔗 GitHub Repository (Coming Soon)</a>
+                            <a href="#" class="project-link">🔒 Security Whitepaper</a>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Azure AD</span>
+                            <span class="tech-tag">IAM</span>
+                            <span class="tech-tag">VPC</span>
+                            <span class="tech-tag">Security Groups</span>
+                            <span class="tech-tag">CloudTrail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary); font-size: 1.8em; margin: 50px 0 25px 0;">UI/UX Design Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image design-icon"></div>
+                    <div class="project-content">
+                        <span class="project-type">Enterprise UX</span>
+                        <h3>Cloud Management Dashboard</h3>
+                        <p>Intuitive cloud resource management interface for IT administrators. Focuses on simplifying complex infrastructure operations through clear information architecture and streamlined workflows. Includes role-based access controls, customizable views, and real-time monitoring capabilities that enhance operational efficiency.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🎨 Figma Prototype (Coming Soon)</a>
+                            <a href="#" class="project-link">📱 Case Study</a>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">User Research</span>
+                            <span class="tech-tag">Wireframing</span>
+                            <span class="tech-tag">Prototyping</span>
+                            <span class="tech-tag">Usability Testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image design-icon"></div>
+                    <div class="project-content">
+                        <span class="project-type">Developer Experience</span>
+                        <h3>DevOps Platform UI Redesign</h3>
+                        <p>Reimagined user experience for a CI/CD platform to improve developer productivity. Conducted user research with engineering teams to identify pain points and designed solutions that reduce cognitive load and streamline deployment workflows. Focus on reducing deployment time and increasing team efficiency.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🎨 Design System (Coming Soon)</a>
+                            <a href="#" class="project-link">📄 Research Findings</a>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">UI Design</span>
+                            <span class="tech-tag">User Interviews</span>
+                            <span class="tech-tag">Design Systems</span>
+                            <span class="tech-tag">Accessibility</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image design-icon"></div>
+                    <div class="project-content">
+                        <span class="project-type">Mobile Design</span>
+                        <h3>Cloud Monitoring Mobile App</h3>
+                        <p>Mobile-first experience for cloud infrastructure monitoring and alerting. Designed for on-the-go incident response with clear data visualization and actionable insights for system administrators. Features real-time alerts, comprehensive metrics dashboard, and intuitive navigation for quick problem resolution.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">🎨 Prototype (Coming Soon)</a>
+                            <a href="#" class="project-link">📱 Mobile Screens</a>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Mobile UX</span>
+                            <span class="tech-tag">Data Visualization</span>
+                            <span class="tech-tag">Responsive Design</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe XD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. EDUCATION & ACKNOWLEDGEMENTS SECTION -->
+        <section id="education" class="animate-on-scroll">
+            <h2>4. Education & Acknowledgements</h2>
+            <div class="education-section">
+                <h3 class="resume-section-title">Education</h3>
+                <div class="education-grid">
+                    <div class="edu-card">
+                        <h4>Postgraduate Certificate in Cloud Computing Technology</h4>
+                        <p class="edu-institution">George Brown College, Toronto, ON</p>
+                        <p class="edu-date">September 2024 - August 2026</p>
+                        <p class="edu-extra-details">
+                            Comprehensive program providing hands-on training in AWS, Azure, and DevOps practices with industry-active faculty. 
+                            Gaining practical skills in containerization (Docker, Kubernetes), cloud automation, and CI/CD pipelines. 
+                            Learning modern approaches to cloud security, monitoring, and deployment strategies for enterprise environments.
+                        </p>
+                    </div>
+
+                    <div class="edu-card">
+                        <h4>Bachelor of Arts in Linguistics & Communication Studies</h4>
+                        <p class="edu-institution">University of Port Harcourt, Nigeria</p>
+                        <p class="edu-date">September 2017 - January 2023</p>
+                        <p class="edu-extra-details">
+                            Developed strong communication, analytical, and research skills that enhance my ability to understand user needs, 
+                            collaborate with cross-functional teams, and document technical processes effectively. This foundation supports 
+                            my transition into cloud computing by enabling clear communication of complex technical concepts.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="resume-section-title" style="margin-top: 50px;">Certifications (In Progress)</h3>
+                <ul class="certifications-list">
+                    <li class="cert-item">
+                        <span class="cert-icon">☁️</span>
+                        <div class="cert-info">
+                            <div class="cert-name">AWS Certified Solutions Architect - Associate</div>
+                            <div class="cert-status">Preparing for certification - Expected 2025</div>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-icon">🔷</span>
+                        <div class="cert-info">
+                            <div class="cert-name">Microsoft Azure Fundamentals (AZ-900)</div>
+                            <div class="cert-status">Preparing for certification - Expected 2025</div>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-icon">🐳</span>
+                        <div class="cert-info">
+                            <div class="cert-name">Certified Kubernetes Administrator (CKA)</div>
+                            <div class="cert-status">Preparing for certification - Expected 2026</div>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-icon">🔒</span>
+                        <div class="cert-info">
+                            <div class="cert-name">CompTIA Security+</div>
+                            <div class="cert-status">Preparing for certification - Expected 2026</div>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3 class="resume-section-title" style="margin-top: 50px;">Key Achievements & Recognition</h3>
+                <div class="education-grid">
+                    <div class="edu-card">
+                        <h4>UI/UX Excellence</h4>
+                        <p class="edu-date">2023 - 2024</p>
+                        <p class="edu-extra-details">
+                            Achieved a 25% improvement in user satisfaction scores across 10+ client projects through user-centered 
+                            design practices. Recognized for ability to translate complex requirements into intuitive solutions, 
+                            demonstrating the value of combining technical skills with design thinking.
+                        </p>
+                    </div>
+
+                    <div class="edu-card">
+                        <h4>Content Management Impact</h4>
+                        <p class="edu-date">2021 - 2023</p>
+                        <p class="edu-extra-details">
+                            Grew online engagement by 40% and improved outreach by 30% through strategic content management and 
+                            streamlined workflows. Reduced production time by 20%, showcasing efficiency improvements and project 
+                            management skills valuable in DevOps environments.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="resume-section-title" style="margin-top: 50px;">Professional Development & Interests</h3>
+                <div style="background: var(--light); padding: 25px; border-radius: 8px; line-height: 1.8;">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">Continuous Learning</h4>
+                    <ul style="list-style-position: inside; margin-bottom: 20px;">
+                        <li>Active learner through AWS Training, Microsoft Learn, and cloud computing online platforms</li>
+                        <li>Regular attendee of technology meetups and conferences focused on cloud infrastructure and DevOps</li>
+                        <li>Contributing to open-source projects related to cloud automation and DevOps tools (GitHub)</li>
+                        <li>Participant in hackathons and coding challenges focused on cloud-native solutions</li>
+                        <li>Member of cloud computing and DevOps professional communities</li>
+                    </ul>
+                    
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">Personal Interests</h4>
+                    <ul style="list-style-position: inside;">
+                        <li>Cloud innovation and DevOps trends - staying current with industry developments</li>
+                        <li>UI/UX design and digital creativity - maintaining design skills alongside technical growth</li>
+                        <li>Basketball and fitness training - promoting teamwork and personal discipline</li>
+                        <li>Strategy games and problem-solving - enhancing analytical thinking and pattern recognition</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Paschal Nnenna. All rights reserved.</p>
+        <p>Digital Portfolio - Cloud Computing Technology Program | George Brown College</p>
+        <div class="footer-links">
+            <a href="/cdn-cgi/l/email-protection#2f41414a41414e5f4e5c4c474e436f564e474040014c4042">Email</a>
+            <a href="https://linkedin.com/in/paschal-nnenna" target="_blank">LinkedIn</a>
+            <a href="https://github.com/paschalnnenna" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <!-- Smooth scroll animation script -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            // Configuration for the observer
+            const observerOptions = {
+                threshold: 0.1, // Trigger when 10% of element is visible
+                rootMargin: '0px 0px -50px 0px' // Trigger slightly before element enters viewport
+            };
+            
+            // Callback function for intersection
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add animated class to trigger animation
+                        entry.target.classList.add('animated');
+                        // Stop observing this element (animate only once)
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+            
+            // Create the observer
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            
+            // Observe all elements with animate-on-scroll class
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Animate first element immediately (header)
+            if (animateElements.length > 0) {
+                animateElements[0].classList.add('animated');
+            }
+        });
+        
+        // Smooth scroll for navigation links (fallback for older browsers)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // TAP-TO-EXPAND functionality for mobile and desktop
+        
+        // Project Cards - Tap to expand/collapse
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Don't expand if clicking a link
+                if (e.target.tagName === 'A') return;
+                
+                // Toggle expanded class
+                this.classList.toggle('expanded');
+                
+                // Optional: Collapse other cards (uncomment if you want only one open at a time)
+                // projectCards.forEach(otherCard => {
+                //     if (otherCard !== this) {
+                //         otherCard.classList.remove('expanded');
+                //     }
+                // });
+            });
+        });
+
+        // Experience Items - Tap to expand/collapse
+        const experienceItems = document.querySelectorAll('.experience-item');
+        experienceItems.forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+            });
+        });
+
+        // Education Items - Tap to expand/collapse
+        const educationItems = document.querySelectorAll('.education-item');
+        educationItems.forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+            });
+        });
+
+        // Education Cards - Tap to expand/collapse
+        const eduCards = document.querySelectorAll('.edu-card');
+        eduCards.forEach(card => {
+            card.addEventListener('click', function() {
+       
