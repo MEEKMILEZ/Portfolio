@@ -838,7 +838,7 @@
                     <h3>PASCHAL NNENNA</h3>
                     <p class="resume-contact">
                         Toronto, ON, Canada<br>
-                        Email: <a href="/cdn-cgi/l/email-protection#1d73737873737c6d7c6e7e757c715d647c757272337e7270"><span class="__cf_email__" data-cfemail="76181813181817061705151e171a360f171e19195815191b">[email&#160;protected]</span></a><br>
+                        Email: <a href="mailto:nnennapaschal@yahoo.com">nnennapaschal@yahoo.com</a><br>
                         Phone: 437-335-3893<br>
                         LinkedIn: linkedin.com/in/paschal-nnenna
                     </p>
@@ -1204,14 +1204,14 @@
         <p>&copy; 2025 Paschal Nnenna. All rights reserved.</p>
         <p>Digital Portfolio - Cloud Computing Technology Program | George Brown College</p>
         <div class="footer-links">
-            <a href="/cdn-cgi/l/email-protection#2f41414a41414e5f4e5c4c474e436f564e474040014c4042">Email</a>
+            <a href="mailto:nnennapaschal@yahoo.com">Email</a>
             <a href="https://linkedin.com/in/paschal-nnenna" target="_blank">LinkedIn</a>
             <a href="https://github.com/paschalnnenna" target="_blank">GitHub</a>
         </div>
     </footer>
 
     <!-- Smooth scroll animation script -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Intersection Observer for scroll animations
         document.addEventListener('DOMContentLoaded', function() {
             const animateElements = document.querySelectorAll('.animate-on-scroll');
@@ -1303,4 +1303,15 @@
         const eduCards = document.querySelectorAll('.edu-card');
         eduCards.forEach(card => {
             card.addEventListener('click', function() {
-       
+                this.classList.toggle('expanded');
+            });
+        });
+
+        // Visual feedback for touch devices
+        if ('ontouchstart' in window) {
+            // Add touch-specific styling
+            document.body.classList.add('touch-device');
+        }
+    </script>
+</body>
+</html>
